@@ -1,5 +1,5 @@
 {
-    "name": "nagy/laravel-rating",
+    "name": "klipsik/laravel-rating",
     "description": "manage rating column for elqouent models",
     "license": "MIT",
     "authors": [
@@ -17,7 +17,7 @@
         }
     },
     "require": {
-        "php": "^7.2",
+        "php": "^7.4",
         "illuminate/database": "8.*",
         "illuminate/support": "8.*"
     },
