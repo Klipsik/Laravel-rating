@@ -17,7 +17,7 @@ class CreateLikingsTable extends Migration
                 $table->bigIncrements('id');
 
                 $table->morphs('model');
-                $table->morphs('likable');
+                $table->morphs('likeable');
 
                 $table->decimal('value', 2, 1);
 

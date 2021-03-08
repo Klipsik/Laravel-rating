@@ -14,35 +14,35 @@ trait CanVote
 
     public function upVote($model)
     {
-        return LaravelRating::rate($this, $model, 1);
+        return LaravelRating::vote($this, $model, 1);
     }
 
     public function downVote($model)
     {
-        return LaravelRating::rate($this, $model, 0);
+        return LaravelRating::vote($this, $model, 0);
     }
 
     public function isVoted($model)
     {
-        return LaravelRating::isRated($this, $model);
+        return LaravelRating::isVoted($this, $model);
     }
 
     public function upVoted()
     {
         $upVoted = $this->votes()->where('value', 1)->get();
 
-        return LaravelRating::resolveRatedItems($upVoted);
+        return LaravelRating::resolveVotedItems($upVoted);
     }
 
     public function downVoted()
     {
         $downVoted = $this->votes()->where('value', 0)->get();
 
-        return LaravelRating::resolveRatedItems($downVoted);
+        return LaravelRating::resolveVotedItems($downVoted);
     }
 
     public function voted()
     {
-        return LaravelRating::resolveRatedItems($this->votes);
+        return LaravelRating::resolveVotedItems($this->votes);
     }
 }

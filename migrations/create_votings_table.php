@@ -17,7 +17,7 @@ class CreateVotingsTable extends Migration
                 $table->bigIncrements('id');
 
                 $table->morphs('model');
-                $table->morphs('likable');
+                $table->morphs('voteable');
 
                 $table->decimal('value', 2, 1);
 
