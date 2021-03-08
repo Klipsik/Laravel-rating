@@ -8,7 +8,7 @@ trait Likeable
 {
     public function likes()
     {
-        return $this->morphMany(Liking::class, 'rateable');
+        return $this->morphMany(Liking::class, 'likeable');
     }
 
     public function likesDislikesSumm()

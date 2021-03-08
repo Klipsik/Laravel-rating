@@ -8,7 +8,7 @@ trait Votable
 {
     public function votes()
     {
-        return $this->morphMany(Voting::class, 'rateable');
+        return $this->morphMany(Voting::class, 'voteable');
     }
 
     public function sumVotesCount()
