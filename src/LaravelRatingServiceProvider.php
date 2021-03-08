@@ -17,6 +17,14 @@ class LaravelRatingServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../migrations/create_ratings_table.php' => $migrationsPath,
         ], 'laravelRatings');
+        $migrationsPath = app()->basePath().'/database/migrations/'.date('Y_m_d_His').'_create_votings_table.php';
+        $this->publishes([
+            __DIR__.'/../migrations/create_votings_table.php' => $migrationsPath,
+        ], 'laravelRatings');
+        $migrationsPath = app()->basePath().'/database/migrations/'.date('Y_m_d_His').'_create_likings_table.php';
+        $this->publishes([
+            __DIR__.'/../migrations/create_likings_table.php' => $migrationsPath,
+        ], 'laravelRatings');
     }
 
     /**

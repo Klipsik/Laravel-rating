@@ -3,13 +3,13 @@
 namespace Nagy\LaravelRating\Traits\Like;
 
 use LaravelRating;
-use Nagy\LaravelRating\Models\Rating;
+use Nagy\LaravelRating\Models\Laking;
 
 trait CanLike
 {
     public function likes()
     {
-        return $this->morphMany(Rating::class, 'model');
+        return $this->morphMany(Laking::class, 'model');
     }
 
     public function like($model)

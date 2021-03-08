@@ -3,13 +3,13 @@
 namespace Nagy\LaravelRating\Traits\Vote;
 
 use LaravelRating;
-use Nagy\LaravelRating\Models\Rating;
+use Nagy\LaravelRating\Models\Voting;
 
 trait CanVote
 {
     public function votes()
     {
-        return $this->morphMany(Rating::class, 'model');
+        return $this->morphMany(Voting::class, 'model');
     }
 
     public function upVote($model)

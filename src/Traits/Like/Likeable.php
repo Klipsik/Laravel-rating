@@ -2,13 +2,18 @@
 
 namespace Nagy\LaravelRating\Traits\Like;
 
-use Nagy\LaravelRating\Models\Rating;
+use Nagy\LaravelRating\Models\Laking;
 
 trait Likeable
 {
     public function likes()
     {
-        return $this->morphMany(Rating::class, 'rateable');
+        return $this->morphMany(Laking::class, 'rateable');
+    }
+
+    public function likesDislikesSumm()
+    {
+        return $this->likesCount() - $this->dislikesCount();
     }
 
     public function likesDislikesCount()

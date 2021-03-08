@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRatingsTable extends Migration
+class CreateLikingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,12 @@ class CreateRatingsTable extends Migration
      */
     public function up()
     {
-        if (!Schema::hasTable('ratings')) {
-            Schema::create('ratings', function (Blueprint $table) {
+        if (!Schema::hasTable('likings')) {
+            Schema::create('likings', function (Blueprint $table) {
                 $table->bigIncrements('id');
 
                 $table->morphs('model');
-                $table->morphs('rateable');
+                $table->morphs('likable');
 
                 $table->decimal('value', 2, 1);
 
@@ -32,8 +32,8 @@ class CreateRatingsTable extends Migration
      */
     public function down()
     {
-        if (Schema::hasTable('ratings')) {
-            Schema::drop('ratings');
+        if (Schema::hasTable('likings')) {
+            Schema::drop('likings');
         }
     }
 }
